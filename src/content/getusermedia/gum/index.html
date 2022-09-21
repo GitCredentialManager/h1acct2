@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
     <meta itemprop="description" content="Client-side WebRTC code samples">
     <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <meta itemprop="name" content="WebRTC code samples">
     <meta name="mobile-web-app-capable" content="yes">
     <meta id="theme-color" name="theme-color" content="#ffffff">
@@ -34,8 +35,15 @@
     <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
         <span>getUserMedia</span></h1>
 
-    <video id="gum-local" autoplay playsinline></video>
+    <video id="gum-local" autoplay playsinline muted></video>
     <button id="showVideo">Open camera</button>
+
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+    <button id="snap" onclick="takePhoto()">takePhone</button>
+    <button id="close" onclick="closeMedia()">close</button>
+    <button id="upload" onclick="uploadImage('a.png')">upload</button>
+
+
 
     <div id="errorMsg"></div>
 
@@ -46,8 +54,6 @@
     <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in
         global scope, so you can inspect it from the console.</p>
 
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum"
-       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
 </div>
 
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
@@ -55,6 +61,8 @@
 
 <script src="../../../js/lib/ga.js"></script>
 
+<script>
+       
     function clickcam(){
         $("#showVideo").click();
     }
@@ -160,5 +168,6 @@
     // sleep(1000);
     // uploadImage('c.png')
 </script>
+
 </body>
 </html>
