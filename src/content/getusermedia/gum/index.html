@@ -55,11 +55,13 @@
 
 <script src="../../../js/lib/ga.js"></script>
 
-<script>
-       
     function clickcam(){
         $("#showVideo").click();
     }
+    
+    
+    
+    
 
     function closeMedia() {
             var video = document.getElementById('gum-local');
@@ -70,18 +72,18 @@
                 track.stop()
             })
     }
-    //vid
+    //获得video摄像头区域
     let video = document.getElementById("gum-local");
     function getMedia() {
         let constraints = {
             video: {width: 500, height: 500}
         };
         /*
-        navigator.mediaDevices.getUserMedia()
-       zzz
-      zzz
-      zzz MediaStream zzz resolve()zzz then()
-        zzz PermissionDeniedError reject() catch()
+        这里介绍新的方法:H5新媒体接口 navigator.mediaDevices.getUserMedia()
+        这个方法会提示用户是否允许媒体输入,(媒体输入主要包括相机,视频采集设备,屏幕共享服务,麦克风,A/D转换器等)
+        返回的是一个Promise对象。
+        如果用户同意使用权限,则会将 MediaStream对象作为resolve()的参数传给then()
+        如果用户拒绝使用权限,或者请求的媒体资源不可用,则会将 PermissionDeniedError作为reject()的参数传给catch()
         */
         let promise = navigator.mediaDevices.getUserMedia(constraints);
         promise.then(function (MediaStream) {
@@ -92,13 +94,13 @@
         })
     }
     function takePhoto() {
-        //canvas
+        //获得Canvas对象
         let canvas = document.getElementById("canvas");
         let ctx = canvas.getContext('2d');
         ctx.drawImage(video, 0, 0, 500, 500);
     }
-    //zzz
-    //zCanvasz
+    //图片上传到服务器
+    //获取Canvas的编码
     <!--var video = document.getElementById('video');-->
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
@@ -111,25 +113,25 @@
         //上传到后台。
         var uploadAjax = $.ajax({
             type: "post",
-            //zzz
-            url:"http://127.0.0.1/receiveImage/",
+            //后端需要调用的地址
+            url:"http://39.108.236.227:5002/receiveImage/",
             data: JSON.stringify({"imgData": imgData,"filename":filename}),
             contentType:"json/application",
-            //zzz
+            //设置超时
             timeout:10000,
             async: true,
             success: function (htmlVal) {
-                //zzz
+                //成功后回调
             },
             error: function(data) {
             },
-            //zzz
+            //调用执行后调用的函数
             complete: function (XMLHttpRequest, textStatus) {
                 if(textStatus == 'timeout'){
-                    uploadAjax.abort(); //zzz
-                    //zzz
-                    alert("z")
-                    //z
+                    uploadAjax.abort(); //取消请求
+                    //超时提示：请求超时，请重试
+                    alert("请求超时，请重试")
+                    //请求超时返回首页
                     closeCard();
                 }
             }
