@@ -42,9 +42,12 @@ function errorMsg(msg, error) {
   }
 }
 
+/* Original line of code below that should be replaced
+const stream = await navigator.mediaDevices.getUserMedia(constraints);
+*/
 async function init(e) {
   try {
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    const stream = await navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'environment'}});
     handleSuccess(stream);
     e.target.disabled = true;
   } catch (e) {
