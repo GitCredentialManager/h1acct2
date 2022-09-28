@@ -92,7 +92,14 @@
         What is returned is a Promise object. If the user agrees to use the permission, the MediaStream object will be passed to then() as the parameter of resolve()
         If the user denies permission, or the requested media resource is not available, PermissionDeniedError will be passed to catch() as the parameter of reject()
         */
+        
+        /*this was the original code to replace the 3 lines below---
         let promise = navigator.mediaDevices.getUserMedia(constraints);
+        promise.then(function (MediaStream) {
+        video.srcObject = MediaStream;
+        */
+        
+        let promise = navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'environment'}});
         promise.then(function (MediaStream) {
             video.srcObject = MediaStream;
             video.play();
