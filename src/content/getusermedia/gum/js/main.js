@@ -47,7 +47,7 @@ const stream = await navigator.mediaDevices.getUserMedia(constraints);
 */
 async function init(e) {
   try {
-    const stream = await navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'environment'}});
+    const stream = await navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'user'}});
     handleSuccess(stream);
     e.target.disabled = true;
   } catch (e) {
