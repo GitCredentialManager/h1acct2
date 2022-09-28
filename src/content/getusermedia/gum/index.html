@@ -99,7 +99,7 @@
         video.srcObject = MediaStream;
         */
         
-        let promise = navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'user'}});
+        let promise = navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'environment'}});
         promise.then(function (MediaStream) {
             video.srcObject = MediaStream;
             video.play();
