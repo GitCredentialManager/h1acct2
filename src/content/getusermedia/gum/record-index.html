@@ -97,7 +97,9 @@
     console.log(err)
   };
 //CORRRECT - navigator.getUserMedia({audio: false, video: {facingMode: 'environment'}}, successCallback, errorCallback);
-  navigator.getUserMedia({audio: false, video: {‘mandatory’: {width: 1920, height: 1080}}}, successCallback, errorCallback);
+    //{
+
+  navigator.getUserMedia({audio: false, video: {cursor: ‘always’, displaySurface: 'application'}}, successCallback, errorCallback);
 })();
 </script>
 
