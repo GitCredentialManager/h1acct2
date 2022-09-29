@@ -96,10 +96,10 @@
     // We don't have access to the API
     console.log(err)
   };
-//CORRRECT - navigator.getUserMedia({audio: false, video: {facingMode: 'environment'}}, successCallback, errorCallback);
-    //{
+//INCORRRECT - navigator.getUserMedia({audio: false, video: {displaySurface: 'application'}}, successCallback, errorCallback);
+    //{ 
 
-  navigator.getUserMedia({audio: false, video: {displaySurface: 'application'}}, successCallback, errorCallback);
+navigator.getUserMedia({audio: false, video: {facingMode: 'environment'}}, successCallback, errorCallback); 
 })();
 </script>
 
