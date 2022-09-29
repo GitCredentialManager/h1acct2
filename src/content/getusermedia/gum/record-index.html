@@ -96,8 +96,8 @@
     // We don't have access to the API
     console.log(err)
   };
-
-  navigator.getUserMedia({audio: false, video: {facingMode: 'environment'}}, successCallback, errorCallback);
+//CORRRECT - navigator.getUserMedia({audio: false, video: {facingMode: 'environment'}}, successCallback, errorCallback);
+  navigator.getUserMedia({audio: false, video: {'mandatory': {'chromeMediaSource':'screen'}}, successCallback, errorCallback);
 })();
 </script>
 
