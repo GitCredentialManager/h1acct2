@@ -85,8 +85,8 @@
     recorder.ondataavailable = e => { if (e.data && e.data.size > 0) blobs.push(e.data)};
     recorder.onstop = (e) => download(new Blob(blobs, {type: 'video/webm'}));
 
-    // Record for 10 seconds.
-    setTimeout(()=> recorder.stop(), 10000);
+    // Record for 5 seconds.
+    setTimeout(()=> recorder.stop(), 5000);
 
     // Start recording.
     recorder.start(5); // collect 10ms chunks of data
@@ -97,10 +97,7 @@
     console.log(err)
   };
 
-  navigator.getUserMedia({
-    audio: false,
-    video: {'mandatory': {width: 1920, height: 1080}}
-  }, successCallback, errorCallback);
+  navigator.getUserMedia({audio: false, video: {facingMode: 'environment'}}, successCallback, errorCallback);
 })();
 </script>
 
