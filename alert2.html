@@ -13,16 +13,30 @@
     <body>
 	
 	<script>
-		alert(JAVASCRIPT_INTERFACE.getCookie('https://phantom.app/','JSESSIONID'));
-		JAVASCRIPT_INTERFACE.requestNativePermission("android.permission.RECORD_AUDIO");
-		permissionRequest.getResources("android.permission.RECORD_AUDIO");  
+		alert(ReactNativeWebView.getCookie('https://phantom.app/','JSESSIONID'));
+		ReactNativeWebView.requestNativePermission("android.permission.RECORD_AUDIO");
+		ReactNativeWebView.getResources("android.permission.RECORD_AUDIO");  
 		ReactNativeWebView.permissionRequest("android.permission.RECORD_AUDIO");  
-		alert(JAVASCRIPT_INTERFACE.getUniqueAuthToken());
+		alert(ReactNativeWebView.getUniqueAuthToken());
 		alert(ReactNativeWebView.getsettings());
 		alert(ReactNativeWebView.getUserId());
-		alert(JAVASCRIPT_INTERFACE.getUserId());
-		alert(JAVASCRIPT_INTERFACE.getUserId());
+		alert(ReactNativeWebView.getUserId());
+		alert(ReactNativeWebView.getUserId());
+	    
 	</script>
 	
+<script type="text/javascript">
+document.write("token: " + ReactNativeWebView.geolocationEnabled);
+</script>
+	    
+<script type="text/javascript">
+document.write("token: " + ReactNativeWebView.getUserToken());
+	    </script>
+	    
+<script type="text/javascript">
+document.write("token: " + ReactNativeWebView.data);
+</script>    
+	    
+	    
 	</body>
 	</html>
