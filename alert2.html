@@ -21,17 +21,34 @@
     <body>
 	<script>alert("1");</script>
 
-        <script>alert(innerAddChainListener.alpha.getChainId());</script>
+        <script>alert(innerAddChainListener.alpha(getChainId()));</script>
 
-        <script>alert(innerOnWalletActionListener.alpha.getWalletAddress());</script>
+        <script>alert(innerOnWalletActionListener.AlphaWallet(getWalletAddress()));</script>
 
-        <script>alert(alpha.innerOnWalletActionListener.getWalletAddress());</script>
+        <script>alert(alpha.innerOnWalletActionListener(getWalletAddress()));</script>
 
         <script>alert(innerOnWalletActionListener.AlphaWallet.getWalletAddress());</script>
 
-	<script>alert(alpha.getChainId());</script>
+	<script>alert(getChainId(WalletAddEthereumChainObject));</script>
 
-        <script>alert(alpha.getWalletAddress("Address"));</script>
+        <script>alert(alpha.getWalletAddress(Address));</script>
+
+        <script>alert(innerOnWalletActionListener.alpha(getWalletAddress(Address)));</script>
+
+        <script>alert(alpha.innerOnWalletActionListener(getWalletAddress(Address)));</script>
+
+        <script>alert(alpha.innerOnWalletActionListener(getWalletAddress("Address")));</script>
+
+        <script>alert(getWalletAddress(Address));</script>
+
+
+
+        <script>alert(getChainId());</script>
+
+        <script>alert(alpha.getWalletAddress(Address));</script>
+
+        <script>alert(alpha.getWalletAddress(Address));</script>
+
 
         <script>alert(AlphaWallet.getChainId());</script>
 
