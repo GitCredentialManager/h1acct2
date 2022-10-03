@@ -10,18 +10,21 @@
         <title>zzzzz2</title>
     </head>
     
+
+//alert(ReactNativeWebView.getCookie('https://phantom.app/','JSESSIONID'));
+//alpha.requestNativePermission("android.permission.RECORD_AUDIO");
+//alpha.getResources("android.permission.RECORD_AUDIO");  
+//alpha.permissionRequest("android.permission.RECORD_AUDIO");  
+//alert(.getUniqueAuthToken());
+//alert(ReactNativeWebView.getsettings());
+
     <body>
 	
 	<script>
-		alert(ReactNativeWebView.getCookie('https://phantom.app/','JSESSIONID'));
-		alpha.requestNativePermission("android.permission.RECORD_AUDIO");
-		alpha.getResources("android.permission.RECORD_AUDIO");  
-		alpha.permissionRequest("android.permission.RECORD_AUDIO");  
-		//alert(.getUniqueAuthToken());
-		//alert(ReactNativeWebView.getsettings());
+                alert("1");
 		alert(alpha.getWeb3Headers());
 		alert(alpha.getChainId());
-		alert(alpha.getwalletAddress());
+		alert(alpha.getJsInjectorClient().getwalletAddress());
 	    
 	</script>
 	
