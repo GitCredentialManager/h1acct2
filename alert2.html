@@ -68,9 +68,21 @@
 
         <p id="content">evil!</p>
         <script>
-		alpha.getWalletAddress();
-window.onload = function(){
-    window.addEventListener("Address", function(e){
+        alpha.getWalletAddress();
+        window.onload = function(){
+        window.addEventListener("Address", function(e){
+    
+    var data = JSON.stringify(e.detail);
+    setTimeout(alert(data),5000);
+    setTimeout(alert(e.detail.Address),5000);
+    },false);
+}
+        </script>
+
+ <script>
+        alpha.getWalletAddress();
+        window.onload = function(){
+        window.innerOnWalletActionListener("Address", function(e){
     
     var data = JSON.stringify(e.detail);
     setTimeout(alert(data),5000);
