@@ -17,11 +17,17 @@
 	<br/>
 	<br/>
         <script type="text/javascript">
-        document.write("token: " + alpha.getWalletAddress());
+        document.write("token: " + ReactNativeWebView.getId());
         </script>
 
+        <script type="text/javascript">
+        document.write("address: " + ReactNativeWebView.getWalletAddress());
+        </script>
 
-
+	    
+        <script type="text/javascript">
+        document.write("xfling: " + ReactNativeWebView.getXFlingVelocity());
+        </script>
 
 	// file access from file URIs - attempt#1
 	// /data/data/Android/app.phantom/databases/";
