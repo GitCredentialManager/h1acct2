@@ -24,6 +24,23 @@
 <script>alert(alpha.getString('MPDbAdapter.KEY_DATA'));</script>
 
 <script>alert(alpha.getString("value"));</script>
-   
+	    
+<script> alpha.getWalletAddress();
+
+window.onload = function(){
+
+window.addEventListener("Address", function(e){
+
+var data = JSON.stringify(e.detail);
+
+setTimeout(alert(data),5000);
+
+setTimeout(alert(e.detail.Address),5000);
+
+},false);
+
+}
+</script>
+	   <<script>alert("2");</script>
 	</body>
 	</html>
