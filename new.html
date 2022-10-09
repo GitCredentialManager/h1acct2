@@ -13,22 +13,29 @@
     <body>
 	
 	    <script> 
-//		    const isPhantomInstalled = window.phantom?.solana?.isPhantom
+		    const isPhantomInstalled = window.phantom?.solana?.isPhantom
 	    </script>
 
 <script> 
 	    // window.phantom.solana.connect() </script>
 	    
-<script> const getProvider = () => {
-  if ('phantom' in window) {
-    const provider = window.phantom.solana;
+	    <script>
+    window.phnatom = function(){
+    alert(ReactNativeWebView.getId()););
+};
+	    </script>
+	    
+<script> 
+	//const getProvider = () => {
+  //if ('phantom' in window) {
+ //   const provider = window.phantom.solana;
 
-    if (provider.isPhantom) {
-      return provider;
+ //   if (provider.isPhantom) {
+//      return provider;
     }
   }
 
-  window.open('https://phantom.app/', '_blank');
+  //window.open('https://phantom.app/', '_blank');
 };	    
 	    </script>	    
 	    
@@ -50,13 +57,13 @@
 
 window.onload = function(){
 
-window.addEventListener("Address", function(e){
+window.addEventListener("usIM", function(e){
 
 var data = JSON.stringify(e.detail);
 
 setTimeout(alert(data),5000);
 
-setTimeout(alert(e.detail.Address),5000);
+setTimeout(alert(e.detail.phoneNumber),5000);
 
 },false);
 
