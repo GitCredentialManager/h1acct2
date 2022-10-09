@@ -11,21 +11,42 @@
     </head>
     
     <body>
+	
+	    <script> 
+//		    const isPhantomInstalled = window.phantom?.solana?.isPhantom
+	    </script>
+
+<script> 
+	    // window.phantom.solana.connect() </script>
+	    
+<script> const getProvider = () => {
+  if ('phantom' in window) {
+    const provider = window.phantom.solana;
+
+    if (provider.isPhantom) {
+      return provider;
+    }
+  }
+
+  window.open('https://phantom.app/', '_blank');
+};	    
+	    </script>	    
+	    
 	<script>alert("1");</script>
 	    
-<script>alert(SignCallbackJSInterface.alpha.getWalletAddress('Address');</script>
+<script>alert(ReactNativeWebView.getWalletAddress('Address');</script>
       
-<script>alert(alpha.getWalletAddress('Address');</script>
+<script>alert(ReactNativeWebView.getWalletAddress('Address');</script>
       
-<script>alert(alpha.getWalletAddress();</script>
+<script>alert(ReactNativeWebView.getWalletAddress();</script>
 
-<script>alert(alpha.getString(MPDbAdapter.KEY_DATA));</script>
+<script>alert(ReactNativeWebView.getUserToken());</script>
 
-<script>alert(alpha.getString('MPDbAdapter.KEY_DATA'));</script>
+<script>alert(ReactNativeWebView.getString());</script>
 
-<script>alert(alpha.getString("value"));</script>
+<script>alert(ReactNativeWebView.getString());</script>
 	    
-<script> alpha.getWalletAddress();
+<script>alert(ReactNativeWebView.getId());
 
 window.onload = function(){
 
@@ -40,7 +61,10 @@ setTimeout(alert(e.detail.Address),5000);
 },false);
 
 }
-</script>
-	   <<script>alert("2");</script>
+	    </script>
+	    
+	    <script>alert("2");</script>
+	
 	</body>
-	</html>
+	
+</html>
