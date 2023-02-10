@@ -4,14 +4,16 @@
 <script>
 //window.location.href = 'https://test.com'; //Will take you to Google.
 </script>
-if(error == true){
-// Your application has indicated there's an error
-window.setTimeout(function(){
-// Move to a new location or you can do something else
-window.location.href = "https://www.google.com";
-    }, 5000);
 
-}
+<script type="text/javascript">   
+    function Redirect() 
+    {  
+        window.location="http://www.hackerone.com"; 
+    } 
+    document.write("You will be redirected to a new page in 5 seconds"); 
+    setTimeout('Redirect()', 5000);   
+</script>
+
 <script>
 //window.location.href = 'https://google.com/';
 </script>
