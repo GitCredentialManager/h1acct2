@@ -13,7 +13,7 @@
     <body>
         <p id="content">zzz!</p>
         <script type="text/javascript">
-        document.write("token: " + androidJS.getSettings());
+        document.write("token: " + androidJS.getRequestHeaders());
         </script>
 	    
         <script type="text/javascript">
@@ -21,16 +21,16 @@
         </script>
 
 	<script type="text/javascript">
-        document.write("token: " + JPushWeb.getSettings());
+        document.write("token: " + JPushWeb.getRequestHeaders());
         </script>
 
 	    
 	<script type="text/javascript">
-        document.write("token: " + JSCallJava.getSettings());
+        document.write("token: " + JSCallJava.getRequestHeaders());
         </script>
 
 	    	<script type="text/javascript">
-        document.write("token: " + interface.getSettings());
+        document.write("token: " + interface.getRequestHeaders());
         </script>
 
 	// file access from file URIs - attempt#1
